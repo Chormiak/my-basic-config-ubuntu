@@ -1,5 +1,4 @@
 # EM FASE DE TESTES, RECOMENDADO NÃO USAR ATÉ QUE ESSA MENSAGEM SUMA
-
 # Configurações Básicas do Ubuntu
 
 ---
@@ -104,6 +103,7 @@ code --install-extension dbaeumer.vscode-eslint
 ### Configuração recomendada no VSCode
 
 * Habilitar **Word Wrap**
+* Desativar **Compact Folders**
 
 ---
 
@@ -117,6 +117,8 @@ sudo apt install python3-pip
 # Instalando PDM (Python Development Master)
 curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
 curl -sSL https://github.com/marrcandre/django-drf-tutorial/raw/main/scripts/pdm_config_bash.sh | bash
+# Configuração importante do PDM
+python.use_venv = False
 ```
 
 ---
