@@ -104,6 +104,7 @@ code --install-extension dbaeumer.vscode-eslint
 ### Configuração recomendada no VSCode
 
 * Habilitar **Word Wrap**
+* Desativar **Compact Folders**
 
 ---
 
