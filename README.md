@@ -17,7 +17,15 @@ sudo apt install curl
 
 ```bash
 sudo apt install gdebi
-sudo apt install gdebi-core gdebi-gtk
+sudo apt install gdebi-core
+```
+
+---
+
+## Snap
+
+```bash
+sudo apt install snapd
 ```
 
 ---
@@ -31,6 +39,7 @@ sudo gdebi google-chrome-stable_current_amd64.deb
 # ou, se preferir:
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt --fix-broken install -y
+rm -r google-chrome-stable_current_amd64.deb
 ```
 
 ---
@@ -41,10 +50,12 @@ sudo apt --fix-broken install -y
 sudo apt install git
 sudo apt install -y curl git
 
-curl -fsSL https://github.com/GitCredentialManager/git-credential-manager/releases/latest/download/gcm-linux_amd64.tar.gz | tar -xz
-sudo ./gcm-linux_amd64/install.sh
+# baixar gerenciador de credenciais
+wget https://github.com/git-ecosystem/git-credential-manager/releases/download/v2.6.1/gcm-linux_amd64.2.6.1.deb
+sudo dpkg -i gcm-linux_amd64.2.6.1.deb
+rm -r gcm-linux_amd64.2.6.1.deb
 
-git config --global credential.helper manager-core
+git-credential-manager configure # configurar crendenciais
 ```
 
 ---
@@ -67,7 +78,7 @@ nvm use --lts
 ## Instalando Visual Studio Code (VSCode)
 
 ```bash
-sudo apt install code
+sudo snap install code --classic
 ```
 
 ### Extensões recomendadas para VSCode
@@ -114,9 +125,14 @@ code --install-extension dbaeumer.vscode-eslint
 sudo apt install python3
 sudo apt install python-is-python3
 sudo apt install python3-pip
+sudo apt install python3-venv
 
 # Instalando PDM (Python Development Master)
 curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
+
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
 curl -sSL https://github.com/marrcandre/django-drf-tutorial/raw/main/scripts/pdm_config_bash.sh | bash
 ```
 
@@ -136,22 +152,13 @@ sudo mysql_secure_installation
 ## MySQL Workbench
 
 ```bash
-sudo apt install mysql-workbench
+sudo snap install mysql-workbench-community
 ```
 
 ---
 
-## Snap
+## Extension Manager
 
 ```bash
-sudo apt install snapd
-```
-
----
-
-## Segurança Extra com UFW (Firewall)
-
-```bash
-sudo apt install ufw -y
-sudo ufw enable
+sudo apt install gnome-shell-extension-manager
 ```
