@@ -36,9 +36,6 @@ sudo apt install snapd
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 sudo gdebi google-chrome-stable_current_amd64.deb
-# ou, se preferir:
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-sudo apt --fix-broken install -y
 rm -r google-chrome-stable_current_amd64.deb
 ```
 
