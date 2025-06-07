@@ -49,10 +49,17 @@ sudo apt install -y curl git
 
 # baixar gerenciador de credenciais
 wget https://github.com/git-ecosystem/git-credential-manager/releases/download/v2.6.1/gcm-linux_amd64.2.6.1.deb
-sudo dpkg -i gcm-linux_amd64.2.6.1.deb
+sudo gdebi gcm-linux_amd64.2.6.1.deb
 rm -r gcm-linux_amd64.2.6.1.deb
 
-git-credential-manager configure # configurar crendenciais
+echo 'export GCM_CREDENTIAL_STORE=plaintext' >> ~/.bashrc
+source ~/.bashrc
+
+git-credential-manager configure
+
+git config --global --unset-all credential.helper # limpar
+
+git config --global credential.helper manager
 ```
 
 ---
