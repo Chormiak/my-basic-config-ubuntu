@@ -30,6 +30,39 @@ sudo apt install snapd
 
 ---
 
+## Flatpak
+
+```bash
+sudo apt install flatpak
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo # repositorio
+
+shutdown -r now # reiniciar ubuntu
+
+# interface grafica (opcional)
+sudo apt install gnome-software-plugin-flatpak
+```
+
+---
+
+## FUSE
+
+```bash
+sudo add-apt-repository universe
+sudo apt install libfuse2t64
+```
+
+---
+
+## Gear Lever (opcional) gerenciador de programas .AppImage
+
+```bash
+flatpak install flathub it.mijorus.gearlever
+flatpak run it.mijorus.gearlever
+```
+
+--- 
+
 ## Instalando Google Chrome
 
 ```bash
